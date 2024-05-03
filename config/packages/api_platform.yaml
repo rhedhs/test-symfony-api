@@ -1,0 +1,24 @@
+api_platform:
+    title: 'TEST API'
+    description: "Welcome to the TEST API documentation! You can use the TEST API to programmatically interact with all the entities in TEST. Use it to retrieve and manage data of Work Orders, Work Requests, Assets, and more!"
+    version: '0.0.1'
+    show_webby: false
+    enable_docs: true
+    path_segment_name_generator: api_platform.path_segment_name_generator.dash
+    defaults:
+        normalizationContext:
+            skip_null_values: false
+            groups: []
+        pagination_items_per_page: 10000
+        pagination_client_items_per_page: true
+        openapi_context:
+            servers:
+                - url: http://localhost
+    collection:
+        order_parameter_name: 'sort'
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [3]
